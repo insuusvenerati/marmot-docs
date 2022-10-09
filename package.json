@@ -6,20 +6,25 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "build": "next build"
+    "build": "next build && next export",
+    "deploy": "yarn build && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
   },
   "author": "Shu Ding",
   "license": "MIT",
   "dependencies": {
     "next": "^12.3.1",
-    "nextra": "2.0.0-beta.29 ",
-    "nextra-theme-docs": "2.0.0-beta.28 ",
+    "nextra": "2.0.0-beta.29",
+    "nextra-theme-docs": "2.0.0-beta.29",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "^8.25.0",
+    "eslint-plugin-react": "^7.31.8",
     "prettier": "^2.7.1",
     "typescript": "4.8.4"
   },
